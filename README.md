@@ -136,7 +136,6 @@ SELECT `date` FROM layoffs_stage1;
 
 ALTER TABLE layoffs_stage1 MODIFY COLUMN `date` DATE;
 
-
 ```
 
 
@@ -151,7 +150,6 @@ Sometimes we need to change the empty cells to null values, in the other hand ma
 
 
 ```sql
-
 
 SELECT * FROM layoffs_stage1;
 
@@ -217,8 +215,6 @@ SET t1.industry = t2.industry WHERE  t1.industry IS NULL AND t2.industry IS NOT 
 
 SELECT * FROM layoffs_stage1 WHERE industry IS NULL;
 
-
-
 ```
 
 
@@ -234,8 +230,6 @@ Sometimes we need to remove some columns which we don’t need to like the ROW_N
 
 ```sql
 
-
-
 SELECT * FROM layoffs_stage1 WHERE total_laid_off IS NULL AND percentage_laid_off IS NULL;
 
 
@@ -243,8 +237,6 @@ DELETE FROM layoffs_stage1 WHERE total_laid_off IS NULL AND percentage_laid_off 
 
 
 ALTER TABLE layoffs_stage1 DROP COLUMN row_num;
-
-
 
 ```
 
